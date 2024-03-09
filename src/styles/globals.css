@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply block h-2 w-2;
+  }
+
+  .sm-custom-scrollbar::-webkit-scrollbar {
+    @apply block h-1 w-1;
+  }
+
+  .custom-scrollbar,
+  .sm-custom-scrollbar {
+    &::-webkit-scrollbar-track {
+      @apply bg-transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply rounded-[9px] bg-[#bfbfbf];
+    }
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      @apply hidden;
+    }
+  }
+
+  .break-anywhere {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .overflow-overlay {
+    overflow: overlay;
+  }
+}
+
+#nprogress .bar {
+  background-color: #8642bd !important;
+}
+
+#nprogress .peg {
+  box-shadow:
+    0 0 10px #8642bd,
+    0 0 5px #8642bd !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #8642bd !important;
+  border-left-color: #8642bd !important;
+}
